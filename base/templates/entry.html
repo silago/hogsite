@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block data %}
+    <strong><small><i>Last Entry </i></small></strong> 
+    <br/>
+    <h3>
+        {{ data.caption }}
+    </h3>
+    <hr/>
+    <p>
+        {{data.text|safe}}
+    </p>
+{% endblock %}

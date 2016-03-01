@@ -1,33 +1,60 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load sidenav %}
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Hedgehog</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> Here live's hog </title>
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/static/css/normalize.css">
+        <link rel="stylesheet" href="/static/css/skeleton.css">
         <style type="text/css">
-            body, html {
-                padding:0;
-                margin:0;
+            .panel {
+                margin-left:4%;
             }
-            body {
-                background-color:#242424;
+            li.clear {
+                list-style:none;
             }
         </style>
-    </head>
-    <body>
-        <nav>
-            Article 1
-            Article 2
-            Article 3
-            Article 4
-            ---------
-            Gallery
-            ---------
-            Roadmap
-            ---------
-            Bugs
-            ---------
-            Staff
-            ---------
-            last build
-            ---------
-        </nav>
-    </body>
+</head>
+<body>
+    <div class="">
+        <br/>
+        <div class="row">
+            <div class="twelve columns">
+                <h2 class="panel">
+                        The hog lives here
+                        <a href="/">
+                        <img src="/static/icon.png" />
+                        </a>
+                </h2>
+            </div>
+            <div class="two columns">
+            {% sidenav as nav %}
+            <ul>
+                {% for item in nav %} 
+                <li><a href="/blog/{{item.id}}">{{ item.caption }}</a></li>
+                {% endfor %}
+                <li class="clear"> <hr/> </li>
+                <li class="clear"> 
+                    <a class="button" href="https://www.dropbox.com/s/h18c5sgs3yc3b3l/game-bin.exe?dl=0">LAST BUILD</a>
+                </li>
+            </ul>
+            </div>
+            <div class="nine columns">
+                {% block data %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
 </html>
