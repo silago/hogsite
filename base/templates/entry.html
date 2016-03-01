@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block data %}
     <strong><small><i>Last Entry </i></small></strong> 
+
+<strong><small><i>
+    {{data.creation_ts}}
+</i></small></strong> 
     <br/>
     <h3>
         {{ data.caption }}
