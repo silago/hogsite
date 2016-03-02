@@ -37,4 +37,10 @@ class StaffItem(models.Model):
 class ProgressItem(models.Model):
     caption        = models.CharField(max_length=255)
     value          = models.IntegerField(default=0)
+
+class SceneFeature(models.Model):
+    caption        = models.CharField(max_length=255)
+    text           = models.TextField()
+    def __str__(self):
+        return self.caption
 # Create your models here.

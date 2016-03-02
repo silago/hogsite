@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block data %}
+<strong><small><i>
+            Фичи и сцены, которые могут быть, а могут и не быть
+</i></small></strong> 
+    {% for scene in data %}
+    <h4>
+        {{ scene.caption }}
+    </h4>
+    <p>
+        {{scene.text|safe}}
+    </p>
+    <hr/>
+    {% endfor %}
+{% endblock %}
