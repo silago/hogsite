@@ -18,6 +18,9 @@
         <link rel="stylesheet" href="/static/css/normalize.css">
         <link rel="stylesheet" href="/static/css/skeleton.css">
         <style type="text/css">
+            .nomargin {
+                margin-left:0px; 
+            }
             .panel {
                 margin-left:4%;
             }
@@ -44,6 +47,9 @@
                 {% for item in nav %} 
                 <li><a href="/blog/{{item.id}}">{{ item.caption }}</a></li>
                 {% endfor %}
+                <li class="clear"><img
+                    style="vertical-align:bottom; margin-left:-8px; height:1.5em;" 
+                    src="/static/image_icon.png"/>&nbsp;<a href="/gallery/">Фотоархив</a></li>
                 <li class="clear"><img
                     style="vertical-align:bottom; margin-left:-8px; height:1.5em;" 
                     src="/static/bulb.png"/>&nbsp;<a href="/scenes_features/">Недопланы</a></li>

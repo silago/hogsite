@@ -1,5 +1,5 @@
 from django.contrib import admin
-from base.models import BlogEntry, SceneFeature
+from base.models import BlogEntry, SceneFeature, Gallery
 #from django.contrib.flatpages.admin import FlatpageForm, FlatPageAdmin
 #from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
@@ -8,6 +8,9 @@ from django import forms
 #class BlogEntryAdmin(admin.ModelAdmin):
 #        pass
 
+
+class GalleryAdmin(admin.ModelAdmin):
+        pass
 
 class SceneFeatureForm(forms.ModelForm):
     class Meta:
@@ -34,6 +37,7 @@ class BlogEntryAdmin(admin.ModelAdmin):
 
 admin.site.register(BlogEntry,BlogEntryAdmin)
 admin.site.register(SceneFeature,SceneFeatureAdmin)
+admin.site.register(Gallery,SceneFeatureAdmin)
 
 
 # Register your models here.

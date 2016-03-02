@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^blog/([\d-]+)/$', bviews.blog), 
     url(r'^scenes_features/$', bviews.scenes_features), 
     url(r'^scene_feature/([\d-]+)/$', bviews.scene_feature), 
+    url(r'^gallery/$', bviews.gallery_index), 
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^pages/', include('django.contrib.flatpages.urls')),
     url(r'^admin/', include(admin.site.urls)),

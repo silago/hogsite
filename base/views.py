@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
-from base.models import BlogEntry, SceneFeature
+from base.models import BlogEntry, SceneFeature, Gallery
 
 def index(request):
     data =  BlogEntry.objects.last()
@@ -14,6 +14,11 @@ def scenes_features(request):
     data =  SceneFeature.objects.all()
     return render_to_response('scenes_features/index.html',{'data':data})
     pass
+
+def gallery_index(request):
+    data =  Gallery.objects.all()
+    return render_to_response('gallery/index.html',{'data':data})
+
 
 def scene_feature(request,id):
     data =  SceneFeature.objects.filter(id=id)[0]

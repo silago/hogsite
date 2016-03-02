@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block data %}
+<strong><small><i>
+            Фотопрогресс
+</i></small></strong> 
+    <hr/>
+    <div class="row">
+    {% for item in data %}
+    <div class="three columns">
+    <p>
+    {% thumbnail item.photo "300x400" crop="center" as im %}
+        <img class="" src="{{ im.url }}" width="{{ im.width }}" >
+    {% endthumbnail %}
+    </p>
+    </div>
+    {% endfor %}
+    </div>
+{% endblock %}
