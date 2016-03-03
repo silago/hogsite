@@ -10,7 +10,9 @@
     <div class="three columns">
     <p>
     {% thumbnail item.photo "300x400" crop="center" as im %}
-        <img class="" src="{{ im.url }}" width="{{ im.width }}" >
+    <a href="{{item.photo.url}}">
+            <img class="" src="{{ im.url }}" width="{{ im.width }}" >
+        </a>
     {% endthumbnail %}
     </p>
     </div>
